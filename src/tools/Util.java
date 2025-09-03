@@ -5,6 +5,10 @@
 package tools;
 
 import javax.swing.JComponent;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import java.util.Date;
 
 
 /**
@@ -19,6 +23,38 @@ public class Util {
         }
     }
     public static void limpar(JComponent ... components){
-        
+        for (int i = 0; i < components.length; i++){
+            if ( components[i] instanceof JTextField ){
+            ((JTextField)components[i]).setText("");    
+            }
+            if ( components[i] instanceof JComboBox){
+            ((JComboBox)components[i]).setSelectedIndex(-1);    
+            }
+        }
+    }
+    public static void mensagem(String cad){
+        JOptionPane.showMessageDialog(null, cad);
+    }
+    public static boolean pergunta(String cad){
+        JOptionPane.showConfirmDialog(null, cad);
+        return true;
+    }
+    public static int strToInt(String num){
+        return Integer.parseInt(num);
+    }
+    public static String intToStr(int num) {
+        return String.valueOf(num);
+    }
+    public static double strToDouble(String num){
+        return 0.0;
+    }
+    public static String doubleToStr(double num){
+        return "";
+    }
+    public static Date strToDate(String data){
+        return null;
+    }
+    public static String dateToStr(Date data){
+        return "";
     }
 }
